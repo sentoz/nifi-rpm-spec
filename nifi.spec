@@ -33,7 +33,6 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}%{_sysconfdir}/%{name}
 mkdir -p %{buildroot}%{_sharedstatedir}/%{name}
 mkdir -p %{buildroot}%{_localstatedir}/log/%{name}
-mkdir -p %{buildroot}%{_localstatedir}/run/%{name}
 tar --strip-components=1 -C %{buildroot}%{_sharedstatedir}/%{name} -xvf %{SOURCE0}
 ln -sf %{_sharedstatedir}/%{name}/conf/ %{_sysconfdir}/%{name}
 install -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{name}.service
@@ -77,7 +76,6 @@ esac
 %defattr(-,root,root)
 %dir %attr(-, %{name}, %{name}) %{_sharedstatedir}/%{name}
 %dir %attr(-, %{name}, %{name}) %{_sysconfdir}/%{name}
-%dir %attr(-, %{name}, %{name}) %{_localstatedir}/run/%{name}
 %dir %attr(-, %{name}, %{name}) %{_localstatedir}/log/%{name}
 %attr(-, %{name}, %{name}) %{_sharedstatedir}/%{name}/*
 %config(noreplace) %attr(640, %{name}, %{name}) %{_sharedstatedir}/%{name}/conf/*
