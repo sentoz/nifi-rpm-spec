@@ -6,11 +6,11 @@ Documentation=https://nifi.apache.org
 
 [Service]
 Type=simple
-ExecStart=java -cp /var/lib/nifi/conf/:/var/lib/nifi/lib/bootstrap/* -Xms12m -Xmx24m -Dorg.apache.nifi.bootstrap.config.log.dir=/var/log/nifi/ -Dorg.apache.nifi.bootstrap.config.pid.dir=/var/run/ -Dorg.apache.nifi.bootstrap.config.file=/var/lib/nifi/conf/bootstrap.conf org.apache.nifi.bootstrap.RunNiFi start
-ExecStop=java -cp /var/lib/nifi/conf/:/var/lib/nifi/lib/bootstrap/* -Xms12m -Xmx24m -Dorg.apache.nifi.bootstrap.config.log.dir=/var/log/nifi/ -Dorg.apache.nifi.bootstrap.config.pid.dir=/var/run/ -Dorg.apache.nifi.bootstrap.config.file=/var/lib/nifi/conf/bootstrap.conf org.apache.nifi.bootstrap.RunNiFi stop
+ExecStart=java -cp /var/lib/nifi/conf/:/var/lib/nifi/lib/bootstrap/* -Xms12m -Xmx24m -Dorg.apache.nifi.bootstrap.config.log.dir=/var/log/nifi/ -Dorg.apache.nifi.bootstrap.config.pid.dir=/var/lib/nifi/ -Dorg.apache.nifi.bootstrap.config.file=/var/lib/nifi/conf/bootstrap.conf org.apache.nifi.bootstrap.RunNiFi start
+ExecStop=java -cp /var/lib/nifi/conf/:/var/lib/nifi/lib/bootstrap/* -Xms12m -Xmx24m -Dorg.apache.nifi.bootstrap.config.log.dir=/var/log/nifi/ -Dorg.apache.nifi.bootstrap.config.pid.dir=/var/lib/nifi/ -Dorg.apache.nifi.bootstrap.config.file=/var/lib/nifi/conf/bootstrap.conf org.apache.nifi.bootstrap.RunNiFi stop
 User=nifi
 Group=nifi
-PIDFile=/var/run/nifi.pid
+PIDFile=/var/lib/nifi/nifi.pid
 Restart=on-abort
 LimitNOFILE=65536
 
