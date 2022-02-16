@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:    nifi
-Version: 1.11.4
+Version: 1.13.2
 Release: 1%{?dist}
 Summary: NiFi an easy to use, powerful, and reliable system to process and distribute data
 License: Apache License, Version 2.0
@@ -86,5 +86,8 @@ esac
 
 
 %changelog
+* Wed Feb 16 2022 Okladin Dmitriy <sentoz66@gmail.com> - 1.13.2
+- Update to 1.13.2
+
 * Tue Feb 09 2021 Okladin Dmitriy <sentoz66@gmail.com> - 1.11.4
 - initial build
